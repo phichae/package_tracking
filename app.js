@@ -48,7 +48,7 @@ const allPackages = [{
     trackingNumber: 'suz2367'
 }]
 
-const filteredPackages = [...allPackages]
+let filteredPackages = [...allPackages]
 
 drawAllPackages(allPackages)
 
@@ -75,6 +75,7 @@ function drawAllPackages(allPackages){
     }
 
     document.getElementById('package-list').innerHTML = packageList
+
 }
 
 function drawFragilePackages() {
@@ -91,3 +92,8 @@ function drawHeavyPackages() {
     filteredPackages = filteredPackages.filter(package => package.weight >= 6)
     drawAllPackages(filteredPackages)
 }
+
+function resetFilters() {
+    filteredPackages = [...allPackages]
+    drawAllPackages(filteredPackages)
+    }
